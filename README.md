@@ -1,2 +1,3 @@
 # libreoffice-langtool
-LibreOffice language tool service
+
+Runs LibreOffice language tool as a service.
