@@ -22,4 +22,4 @@ EXPOSE 8100
 USER langtool
 ENTRYPOINT ["/entrypoint.sh"]
 
-HEALTHCHECK --interval=120 CMD ["/usr/bin/curl", "--silent", "--fail", "-H", "Accept: application/json", "http://127.0.0.1:8100/v2/languages"]
+HEALTHCHECK --interval=120s CMD ["/usr/bin/curl", "--silent", "--fail", "-H", "Accept: application/json", "http://127.0.0.1:8100/v2/languages"]
