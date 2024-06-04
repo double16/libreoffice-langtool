@@ -1,7 +1,7 @@
-FROM ubuntu:23.04
+FROM ubuntu:24.04
 
 ENV DEBIAN_FRONTEND=noninteractive
-ENV LANGUAGE_TOOL_VERSION=5.7
+ENV LANGUAGE_TOOL_VERSION=6.4
 
 RUN useradd --system langtool
 
