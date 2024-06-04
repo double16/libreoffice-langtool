@@ -30,7 +30,7 @@ ADD entrypoint.sh /
 COPY language-tool.properties /etc/
 COPY --from=fasttext /tmp/fastText/fasttext /usr/local/bin
 RUN mkdir -p /opt/fasttext
-ADD https://dl.fbaipublicfiles.com/fasttext/supervised-models/lid.176.bin /opt/fasttext
+ADD --chmod=644 https://dl.fbaipublicfiles.com/fasttext/supervised-models/lid.176.bin /opt/fasttext
 
 EXPOSE 8100
 
