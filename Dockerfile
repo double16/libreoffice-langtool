@@ -1,3 +1,15 @@
+FROM ubuntu:24.04 as fasttext
+
+ENV DEBIAN_FRONTEND=noninteractive
+
+RUN apt-get -q update && \
+    apt-get install -qy build-essential git
+
+WORKDIR /tmp
+RUN git clone https://github.com/facebookresearch/fastText.git
+RUN cd fastText &&\
+    make
+
 FROM ubuntu:24.04
 
 ENV DEBIAN_FRONTEND=noninteractive
@@ -16,6 +28,9 @@ RUN apt-get -q update && \
 
 ADD entrypoint.sh /
 COPY language-tool.properties /etc/
+COPY --from=fasttext /tmp/fastText/fasttext /usr/local/bin
+RUN mkdir -p /opt/fasttext
+ADD https://dl.fbaipublicfiles.com/fasttext/supervised-models/lid.176.bin /opt/fasttext
 
 EXPOSE 8100
 
