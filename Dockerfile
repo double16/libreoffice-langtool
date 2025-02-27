@@ -1,7 +1,7 @@
 FROM ubuntu:24.04
 
 ENV DEBIAN_FRONTEND=noninteractive
-ENV LANGUAGE_TOOL_VERSION=6.4
+ENV LANGUAGE_TOOL_VERSION=6.5
 
 RUN useradd --system langtool
 
