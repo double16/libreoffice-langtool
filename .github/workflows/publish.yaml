@@ -68,4 +68,5 @@ jobs:
         with:
           delete-ghost-images: true
           delete-tags: pr-*
+          older-than: 7 days
 
